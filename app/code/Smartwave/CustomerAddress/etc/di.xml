@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Quote\Model\ShippingAddressManagement">
+        <plugin disabled="false" name="save_custom_shipping_quote_address" sortOrder="10" type="Smartwave\CustomerAddress\Plugin\Checkout\ShippingAddressManagementPlugin"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Address">
+        <plugin disabled="false" name="new_custom_shipping_address" sortOrder="10" type="Smartwave\CustomerAddress\Plugin\Checkout\CustomerAddressPlugin"/>
+    </type>
+</config>
