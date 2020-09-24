@@ -1,0 +1,27 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+    <scope id="global">
+        <fieldset id="sales_convert_quote_address">
+            <field name="neighborhood">
+                <aspect name="to_customer_address" />
+                <aspect name="to_order_address" />
+            </field>
+            <field name="exterior_number">
+                <aspect name="to_customer_address" />
+                <aspect name="to_order_address" />
+            </field>
+            <field name="interior_number">
+                <aspect name="to_customer_address" />
+                <aspect name="to_order_address" />
+            </field>
+            <field name="between_street1">
+                <aspect name="to_customer_address" />
+                <aspect name="to_order_address" />
+            </field>
+            <field name="between_street2">
+                <aspect name="to_customer_address" />
+                <aspect name="to_order_address" />
+            </field>
+        </fieldset>
+    </scope>
+</config>
