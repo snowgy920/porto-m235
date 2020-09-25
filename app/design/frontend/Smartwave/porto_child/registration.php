@@ -5,6 +5,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/Smartwave/202009_hmp_child',
+    'frontend/Smartwave/porto_child',
     __DIR__
 );
