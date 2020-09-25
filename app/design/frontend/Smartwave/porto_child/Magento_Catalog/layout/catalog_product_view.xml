@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="product.info.overview" destination="product.info.main" after="-"/>
+        <referenceBlock name="product.info.overview">
+            <arguments>
+                <argument name="at_label" translate="true" xsi:type="string">Quick Review</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="product.attributes">
+            <arguments>
+                <argument translate="true" name="title" xsi:type="string">Specifications</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="view.addto.compare" remove="true"/>
+        <referenceBlock name="product.info.mailto" remove="true" />
+    </body>
+</page>

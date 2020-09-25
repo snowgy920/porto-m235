@@ -1,0 +1,11 @@
+@media (max-width: 767px) {
+    .logo img {
+        max-height: 40px;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+    .homepage-bar .row > div {
+        justify-content: flex-start !important;
+    }
+}
