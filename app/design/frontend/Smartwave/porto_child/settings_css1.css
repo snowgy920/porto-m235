@@ -286,9 +286,9 @@
     padding: 10px;
 }
 @media (min-width: 768px) {
-.catalog-category-view .page-main, .catalog-product-view .page-main {
-    padding-top: 0;
-}
+    .catalog-category-view .page-main, .catalog-product-view .page-main {
+        padding-top: 0;
+    }
 }
 .breadcrumbs li.home a {
     width: 15px;

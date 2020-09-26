@@ -106,7 +106,7 @@
 <div class="latest-products-wrapper" style="background-color:#fff; margin-top:13px;">
     <h2 class="filterproduct-title"><span class="content"><strong>Gebrauchtgeräte</strong></span></h2>
     <div id="latest_products" class="owl-top-narrow">
-        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_product" product_count="12" column_count="6" aspect_ratio="0" image_width="250" image_height="250" product_type="9" template="owl_list.phtml"}}
+        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_product" category_id="4" product_count="12" column_count="6" aspect_ratio="0" image_width="250" image_height="250" product_type="9" template="owl_list.phtml"}}
     </div>
     <script type="text/javascript">
         require([
@@ -131,7 +131,7 @@
                         items:3
                     },
                     992: {
-                        items:3
+                        items:4
                     },
                     1200: {
                         items:6
@@ -141,10 +141,66 @@
         });
     </script>
 </div>
+<div class="recent-posts">
+    <div id="latest_news" class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="post-image">
+                <img src="{{media url="wysiwyg/gastro/homepage/blog_thumb1.jpg"}}" alt="">
+                <div class="postTitle">
+                    <span>PROFESSIONELLE</span>
+                    <strong>GROßKÜCHENPLANUNG</strong>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="postContent"><p>Planen Sie von Beginn an Ihr Projekt mit asGastro und profitieren Sie von unserer langjährigen Erfahrung.</p></div>
+                <a class="read-more" href="#"><i class="porto-icon-right-open"></i></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="post-image">
+                <img src="{{media url="wysiwyg/gastro/homepage/blog_thumb2.jpg"}}" alt="">
+                <div class="postTitle">
+                    <span>LEASING</span>
+                    <strong>FÜR GROßGERÄTE</strong>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="postContent"><p>Mit unseren flexiblen Leasingangeboten bestimmen Sie die Laufzeit und die Höhe Rate einfach selber.</p></div>
+                <a class="read-more" href="#"><i class="porto-icon-right-open"></i></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="post-image">
+                <img src="{{media url="wysiwyg/gastro/homepage/blog_thumb3.jpg"}}" alt="">
+                <div class="postTitle">
+                    <span>VERMIETUNG</span>
+                    <strong>FÜR FILMPRODUKTIONEN</strong>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="postContent"><p>Für Filmproduktionen und Großevents vermieten wir von der Gabel bis zur kompletten Küche alles was Sie brauchen.</p></div>
+                <a class="read-more" href="#"><i class="porto-icon-right-open"></i></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="post-image">
+                <img src="{{media url="wysiwyg/gastro/homepage/blog_thumb4.jpg"}}" alt="">
+                <div class="postTitle">
+                    <span>EDELSTAHLMÖBEL</span>
+                    <strong>EIGENE FERTIGUNG</strong>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="postContent"><p>Edelstahlmöbel nach Maß und „Made in Germany“. Gehen Sie keine Kompromisse bei der Qualität ein.</p></div>
+                <a class="read-more" href="#"><i class="porto-icon-right-open"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="featured-products-wrapper">
-    <h2 class="filterproduct-title"><span class="content"><strong>Gebrauchtgeräte</strong></span></h2>
+    <h2 class="filterproduct-title"><span class="content"><strong>spezialgeräte</strong></span></h2>
     <div id="featured_products" class="owl-top-narrow">
-        {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="12" column_count="6" aspect_ratio="1" image_width="200" product_type="1" template="owl_list.phtml"}}
+        {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="12" column_count="6" aspect_ratio="1" image_width="200" product_type="9" template="owl_list.phtml"}}
     </div>
     <script type="text/javascript">
         require([
@@ -160,7 +216,7 @@
                 margin: 0,
                 nav: false,
                 navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
-                dots: true,
+                dots: false,
                 responsive: {
                     0: {
                         items:2
@@ -169,7 +225,7 @@
                         items:3
                     },
                     992: {
-                        items:3
+                        items:4
                     },
                     1200: {
                         items:6
@@ -342,5 +398,57 @@
     }
     .sw-megamenu.navigation.side-megamenu li.level0.fullwidth > .submenu, .sw-megamenu.navigation.side-megamenu li.level0.staticwidth > .submenu {
         margin-left: 10px !important;
+    }
+    #featured_products .products-grid .product-item .price-box {
+        display: none;
+    }
+    .recent-posts {
+        margin: 50px 0;
+    }
+    .recent-posts .post-image {
+        position: relative;
+        display: flex;
+    }
+    .recent-posts .post-image img {
+        width: 100%;
+    }
+    .recent-posts .post-image .postTitle {
+        padding: 10px 12px;
+        border-radius: 3px;
+        background: #000000;
+        color: #fff;
+        left: 15px;
+        bottom: 13px;
+        position: absolute;
+        letter-spacing: 1px;
+    }
+    .recent-posts .post-image .postTitle span {
+        display: block;
+        font-size: 16px;
+    }
+    .recent-posts .post-image .postTitle strong {
+        font-size: 12px;
+    }
+    .recent-posts .post-content {
+        display: flex;
+        padding: 18px 18px 14px;
+        background: #F4F4F4;
+        align-items: center;
+    }
+    .recent-posts .postContent {
+        -webkit-line-clamp: 4;
+        height: 76px;
+    }
+    .recent-posts .postContent > p {
+        font-size: 12px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+    }
+    .recent-posts .post-content .read-more {
+        width: 19%;
+    }
+    .recent-posts .post-content .read-more > i {
+        font-size: 23px;
+        color: #aeaeae;
     }
 </style>
