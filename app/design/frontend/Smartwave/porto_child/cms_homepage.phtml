@@ -236,58 +236,135 @@
     </script>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>New</strong></span></h2>
-        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_small_list" product_count="3" aspect_ratio="0" image_width="212" image_height="212" template="small_list.phtml"}}
-    </div>
-    <div class="col-md-4">
-        <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>Hot</strong></span></h2>
-        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_small_list" product_count="3" aspect_ratio="0" image_width="212" image_height="212" template="small_list.phtml"}}
-    </div>
-    <div class="col-md-4">
-        <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>Sale</strong></span></h2>
-        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_small_list" product_count="3" aspect_ratio="0" image_width="212" image_height="212" template="small_list.phtml"}}
+<div class="container" style="padding-top: 32px;padding-bottom: 32px;">
+    <div class="brands-slider-section">
+        <div id="brands-slider" class="brands-slider" style="text-align: center;">
+            <div class="owl-carousel">
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand1.png"}}" alt="" style="display: inline-block;" /></div>
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand2.png"}}" alt="" style="display: inline-block;" /></div>
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand3.png"}}" alt="" style="display: inline-block;" /></div>
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand4.png"}}" alt="" style="display: inline-block;" /></div>
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand5.png"}}" alt="" style="display: inline-block;" /></div>
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand6.png"}}" alt="" style="display: inline-block;" /></div>
+                <div class="item"><img src="{{media url="wysiwyg/gastro/homepage/brand7.png"}}" alt="" style="display: inline-block;" /></div>
+            </div>
+            <script type="text/javascript">
+                require([
+                'jquery',
+                'owl.carousel/owl.carousel.min'
+                ], function ($) {
+                    $("#brands-slider .owl-carousel").owlCarousel({
+                        autoplay: false,
+                        autoplayTimeout: 5000,
+                        autoplayHoverPause: true,
+                        margin: 0,
+                        nav: false,
+                        navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
+                        dots: false,
+                        loop: false,
+                        responsive: {
+                            0: {
+                                items:2
+                            },
+                            640: {
+                                items:3
+                            },
+                            768: {
+                                items:4
+                            },
+                            992: {
+                                items:5
+                            },
+                            1200: {
+                                items:7
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
     </div>
 </div>
-<div class="shop-features" style="background-color:#fff; margin-top:13px;">
-    <div class="row">
-        <div class="col-md-4" style="margin-bottom: 10px;">
-            <em class="porto-icon-star"></em>
-            <h3>DEDICATED SERVICE</h3>
-            <p>Consult our specialists for help with an order, customization, or design advice.</p>
-            <a href="#">Get in Touch</a>
+<div class="shop-locations" style="margin-top: 40px">
+    <h2 class="filterproduct-title" style="margin-bottom: 26px"><span class="content"><strong>Unsere Standorte</strong></span></h2>
+    <div class="row" style="margin-left:-14px;margin-right:-14px;">
+        <div class="col-md-4">
+            <div class="shop-item">
+                <div class="shop-banner">
+                    <img src="{{media url="wysiwyg/gastro/homepage/shop1.jpg"}}" alt="" />
+                </div>
+                <div class="shop-name">
+                    <strong>City</strong>
+                    <span> - sub1</span>
+                </div>
+                <div class="location-info">
+                    <div class="shop-address">
+                        <p>Address 1</p>
+                        <p>Address 2</p>
+                    </div>
+                    <div class="shop-contact">
+                        <p>Tel.: 5555 - 555 555</p>
+                        <p>Fax: 5555 - 55 55 5</p>
+                        <p><a href="mailto:mail@mail.de">mail@mail.de</a></p>
+                    </div>
+                    <div class="open-hours">
+                        <p>Öffnungszeiten:</p>
+                        <p>Mo-Fr 10:00 bis 17:00 Uhr</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4" style="margin-bottom: 10px;">
-            <em class="porto-icon-reply"></em>
-            <h3>FREE RETURNS</h3>
-            <p>We stand behind our goods and services and want you to be satisfied with them.</p>
-            <a href="#">Returns Policy</a>
+        <div class="col-md-4">
+            <div class="shop-item">
+                <div class="shop-banner">
+                    <img src="{{media url="wysiwyg/gastro/homepage/shop2.jpg"}}" alt="" />
+                </div>
+                <div class="shop-name">
+                    <strong>City</strong>
+                    <span> - sub1</span>
+                </div>
+                <div class="location-info">
+                    <div class="shop-address">
+                        <p>Address 1</p>
+                        <p>Address 2</p>
+                    </div>
+                    <div class="shop-contact">
+                        <p>Tel.: 5555 - 555 555</p>
+                        <p>Fax: 5555 - 55 55 5</p>
+                        <p><a href="mailto:mail@mail.de">mail@mail.de</a></p>
+                    </div>
+                    <div class="open-hours">
+                        <p>Öffnungszeiten:</p>
+                        <p>Mo-Fr 10:00 bis 17:00 Uhr</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4" style="margin-bottom: 10px;">
-            <em class="porto-icon-paper-plane"></em>
-            <h3>INTERNATIONAL SHIPPING</h3>
-            <p>Currently over 50 countries qualify for express international shipping.</p>
-            <a href="#">Learn More</a>
-        </div>
-    </div>
-</div>
-<div class="single-images">
-    <div class="row" style="margin-left:-10px;margin-right:-10px;">
-        <div class="col-md-4" style="padding-left:10px;padding-right:10px;padding-bottom:15px;">
-            <a class="image-link" href="#">
-                <img src="{{media url="wysiwyg/smartwave/porto/homepage/09/content/img1.jpg"}}" alt="" />
-            </a>
-        </div>
-        <div class="col-md-4" style="padding-left:10px;padding-right:10px;padding-bottom:15px;">
-            <a class="image-link" href="#">
-                <img src="{{media url="wysiwyg/smartwave/porto/homepage/09/content/img2.jpg"}}" alt="" />
-            </a>
-        </div>
-        <div class="col-md-4" style="padding-left:10px;padding-right:10px;padding-bottom:15px;">
-            <a class="image-link" href="#">
-                <img src="{{media url="wysiwyg/smartwave/porto/homepage/09/content/img3.jpg"}}" alt="" />
-            </a>
+        <div class="col-md-4">
+            <div class="shop-item">
+                <div class="shop-banner">
+                    <img src="{{media url="wysiwyg/gastro/homepage/shop3.jpg"}}" alt="" />
+                </div>
+                <div class="shop-name">
+                    <strong>City</strong>
+                    <span> - sub1</span>
+                </div>
+                <div class="location-info">
+                    <div class="shop-address">
+                        <p>Address 1</p>
+                        <p>Address 2</p>
+                    </div>
+                    <div class="shop-contact">
+                        <p>Tel.: 5555 - 555 555</p>
+                        <p>Fax: 5555 - 55 55 5</p>
+                        <p><a href="mailto:mail@mail.de">mail@mail.de</a></p>
+                    </div>
+                    <div class="open-hours">
+                        <p>Öffnungszeiten:</p>
+                        <p>Mo-Fr 10:00 bis 17:00 Uhr</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -408,6 +485,8 @@
     .recent-posts .post-image {
         position: relative;
         display: flex;
+        border-radius: 6px 6px 0 0;
+        overflow: hidden;
     }
     .recent-posts .post-image img {
         width: 100%;
@@ -445,10 +524,82 @@
         letter-spacing: 0.05em;
     }
     .recent-posts .post-content .read-more {
-        width: 19%;
+        width: 10%;
     }
     .recent-posts .post-content .read-more > i {
         font-size: 23px;
         color: #aeaeae;
+    }
+    #brands-slider .owl-stage {
+        display: flex;
+        align-items: center;
+    }
+    .shop-locations .row > div {
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-bottom: 15px;
+    }
+    .shop-locations .shop-item {
+        position: relative;
+        padding-left: 25%;
+        padding-top: 22px;
+    }
+    .shop-locations .shop-item .shop-banner {
+        position: absolute;
+        width: 49%;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+    }
+    @media (min-width: 415px) and (max-width: 767px) {
+        .shop-locations .row > div {
+            padding-bottom: 40px;
+        }
+        .shop-locations .shop-item .shop-banner {
+            top: auto;
+            bottom: 0;
+        }
+    }
+    @media (min-width: 451px) and (max-width: 767px) {
+        .shop-locations .shop-item .shop-banner {
+            width: 40%;
+        }
+    }
+    .shop-locations .shop-item .shop-banner img {
+        width: 100%;
+        height: auto;
+    }
+    .shop-locations .shop-item .location-info {
+        background: #F4F4F4;
+        padding: 12px 18px 12px 37%;
+        font-size: 12px;
+    }
+    @media (max-width: 767px) {
+        .shop-locations .shop-item .location-info {
+            padding-right: 0;
+        }
+    }
+    .shop-locations .shop-item .location-info p {
+        margin: 0;
+    }
+    .shop-locations .shop-item .location-info .shop-contact {
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    .shop-locations .shop-item .location-info .shop-contact a {
+        color: #0377FB;
+    }
+    .shop-locations .shop-item .shop-name {
+        position: absolute;
+        top: 2px;
+        left: 48%;
+        font-size: 15px;
+        font-weight: bold;
+        color: #707070;
+    }
+    .shop-locations .shop-item .shop-name strong {
+        color: #333333;
     }
 </style>

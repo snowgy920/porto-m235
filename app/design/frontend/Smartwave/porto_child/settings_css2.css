@@ -1,5 +1,17 @@
+@media (min-width: 768px) {
+    .page-footer>.footer {
+        max-width: 720px
+    }
+}
+@media (min-width: 992px) {
+    .page-footer>.footer {
+        max-width: 960px
+    }
+}
 @media (min-width:1200px){
-    .block.category.event,.footer.content,.header.content,.navigation,.page-header .header.panel,.page-main,.page-wrapper>.breadcrumbs,.page-wrapper>.page-bottom,.page-wrapper>.widget,.top-container{max-width:1190px}
+    .block.category.event,.footer.content,.header.content,.navigation,.page-header .header.panel,.page-main,.page-wrapper>.breadcrumbs,.page-wrapper>.page-bottom,.page-wrapper>.widget,.top-container, .page-footer>.footer {
+        max-width: 1190px
+    }
 }
 .product-item-info.type9 .product.name a {
     font-size: 13px;

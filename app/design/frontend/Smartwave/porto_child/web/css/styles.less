@@ -1,3 +1,10 @@
+body {
+	background: url(../images/img_background.png) no-repeat 0 190px;
+	background-size: contain;
+	@media (max-width: 991px) {
+		background-position: 0 250px;
+	}
+}
 .png-icon-phone {
 	width: 24px;
 	height: 24px;
@@ -26,10 +33,12 @@
 	content: '';
 }
 .page-main {
-	position: relative;
 	padding-left: 24px;
 	padding-right: 24px;
-
+	background: white;
+}
+.page-main, .footer {
+	position: relative;
 	&:before, &:after {
 		content: " ";
 		height: 100%;
@@ -63,5 +72,48 @@
 		font-size: 13px;
 		height: 38px;
 		margin: 0;
+	}
+}
+.footer {
+	padding-top: 24px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #F4F4F4;
+	.footer-middle {
+		border-top: 1px solid #BEBEBE;
+		ul.links li [class^="porto-icon-"] {
+			font-size: 15px;
+			color: #adadad;
+			&:before {
+				margin-right: 0;
+			}
+		}
+		a, a:hover, a:focus {
+			color: #333333;
+		}
+		.block-content {
+			h3 {
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 18px;
+				margin: 0;
+			}
+			strong {
+				color: #707070;
+				font-size: 14px;
+				font-weight: normal;
+			}
+		}
+		.shop-contact {
+			margin: 14px 0;
+		}
+	}
+	.footer-middle > .container, .footer-bottom > .container {
+		max-width: 100%;
+		padding: 0;
+	}
+	.footer-bottom {
+		padding-left: 26px;
+		padding-right: 26px;
 	}
 }
