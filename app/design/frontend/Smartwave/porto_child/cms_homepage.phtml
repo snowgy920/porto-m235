@@ -103,42 +103,83 @@
         </script>
     </div>
 </div>
-<h2 class="filterproduct-title"><span class="content"><strong>FEATURED ITEMS</strong></span></h2>
-<div id="featured_product" class="owl-top-narrow">
-    {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="10" aspect_ratio="1" image_width="200" product_type="1" template="owl_list.phtml"}}
-</div>
-<script type="text/javascript">
-    require([
-        'jquery',
-        'owl.carousel/owl.carousel.min'
-    ], function ($) {
-        $("#featured_product .owl-carousel").owlCarousel({
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            loop: true,
-            navRewind: true,
-            margin: 0,
-            nav: false,
-            navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
-            dots: true,
-            responsive: {
-                0: {
-                    items:2
-                },
-                768: {
-                    items:3
-                },
-                992: {
-                    items:3
-                },
-                1200: {
-                    items:4
+<div class="latest-products-wrapper" style="background-color:#fff; margin-top:13px;">
+    <h2 class="filterproduct-title"><span class="content"><strong>Gebrauchtgeräte</strong></span></h2>
+    <div id="latest_products" class="owl-top-narrow">
+        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_product" product_count="12" column_count="6" aspect_ratio="0" image_width="250" image_height="250" product_type="9" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+        require([
+            'jquery',
+            'owl.carousel/owl.carousel.min'
+        ], function ($) {
+            $("#latest_products .owl-carousel").owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                loop: true,
+                navRewind: true,
+                margin: 0,
+                nav: false,
+                navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
+                dots: false,
+                responsive: {
+                    0: {
+                        items:2
+                    },
+                    768: {
+                        items:3
+                    },
+                    992: {
+                        items:3
+                    },
+                    1200: {
+                        items:6
+                    }
                 }
-            }
+            });
         });
-    });
-</script>
+    </script>
+</div>
+<div class="featured-products-wrapper">
+    <h2 class="filterproduct-title"><span class="content"><strong>Gebrauchtgeräte</strong></span></h2>
+    <div id="featured_products" class="owl-top-narrow">
+        {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="12" column_count="6" aspect_ratio="1" image_width="200" product_type="1" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+        require([
+            'jquery',
+            'owl.carousel/owl.carousel.min'
+        ], function ($) {
+            $("#featured_products .owl-carousel").owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                loop: true,
+                navRewind: true,
+                margin: 0,
+                nav: false,
+                navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
+                dots: true,
+                responsive: {
+                    0: {
+                        items:2
+                    },
+                    768: {
+                        items:3
+                    },
+                    992: {
+                        items:3
+                    },
+                    1200: {
+                        items:6
+                    }
+                }
+            });
+        });
+    </script>
+</div>
+
 <div class="row">
     <div class="col-md-4">
         <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>New</strong></span></h2>
