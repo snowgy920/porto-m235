@@ -942,13 +942,6 @@
         background-color: transparent;
         border: none;
     }
-    .home-side-menu h2.side-menu-title {
-        color: #465157;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.001em;
-        padding: 18.5px 25px;
-    }
     .navigation.side-megamenu a, .navigation.side-megamenu a:hover {
         color: #465157;
     }
