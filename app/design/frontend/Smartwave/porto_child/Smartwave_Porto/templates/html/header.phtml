@@ -645,10 +645,16 @@
             <div class="main-panel-inner">
                 <div class="panel wrapper">
                     <div class="panel header">
+                        <span class="header-top-title"><?=__('Gastronomiebedarf für Profis')?></span>
                         <?php echo $this->getChildHtml("skip_to_content"); ?>
                         <?php echo $this->getChildHtml("currency"); ?>
                         <?php echo $this->getChildHtml("store_language"); ?>
-                        <?php echo $this->getChildHtml("header.links"); ?>
+
+                        <?php echo $this->getChildHtml("custom_block"); ?>
+                        <div class="top-links-area">
+                            <a class="top-links-icon" href="javascript:void(0)">Links</a>
+                            <?php echo $this->getChildHtml("header.links"); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -660,7 +666,6 @@
         <?php echo $this->getChildHtml("minicart"); ?>
         <a href="<?php echo $_helper->getBaseLinkUrl(). 'wishlist' ?>" class="action my-wishlist" title="My Wish List" role="button"><i class="porto-icon-heart-empty"></i></a>
         <?php echo $this->getChildHtml("top.search"); ?>
-        <?php echo $this->getChildHtml("custom_block"); ?>
     </div>
     <?php echo $this->getChildHtml("navigation.sections"); ?>
 

@@ -1,580 +1,305 @@
-<style>
-    .page-main {
-        padding: 0 !important;
-    }
-
-    .columns .column.main {
-        padding: 0;
-    }
-
-    .slide {
-        padding: 176px 0 303px;
-    }
-
-    .newsletter-section .field.newsletter label {
-        display: none;
-    }
-
-    .newsletter-section .field.newsletter .control {
-        display: flex;
-    }
-
-    .newsletter-section .field.newsletter .control>input {
-        height: 48px;
-        border-radius: 24px 0 0 24px;
-        font-style: italic;
-        font-size: 12px;
-        padding-left: 20px;
-        box-shadow: none;
-        background-color: #fff;
-        color: #777;
-        border-color: rgba(0, 0, 0, 0.09);
-    }
-
-    .newsletter-section .field.newsletter .control>button {
-        padding: 10px 35px 10px 30px;
-        border-radius: 0 24px 24px 0;
-        height: 48px;
-        color: #ffffff;
-        background-color: #323232;
-        border-color: #323232 #323232 #191919;
-    }
-
-    .product-tag-section {
-        margin-bottom: 35px;
-        background: #f4f4f4;
-        padding: 20px 0 0 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .product-tag-section a.tag-cloud-link {
-        font-size: 13px;
-        font-weight: 600;
-        color: #222529;
-        text-transform: uppercase;
-        border: 1px solid #e7e7e7;
-        background: #fff;
-        border-radius: 0;
-        margin: 0 20px 20px 0;
-        min-width: 110px;
-        padding: 13px;
-        text-align: center;
-        line-height: 1;
-        display: inline-block;
-        text-decoration: none;
-    }
-
-    .white-product-section .products {
-        margin: 0;
-    }
-
-    .white-product-section .products .product-item {
-        padding: 0;
-    }
-
-    @media (max-widdth: 575px) {
-        .white-product-section .products-grid .product-item {
-            width: 100%;
-        }
-    }
-
-    .homepage-bar {
-        border: 0;
-        background-color: #f4f4f4;
-    }
-
-    .homepage-bar .col-lg-4 {
-        border-left-color: #fff;
-        border-left-width: 2px;
-        text-align: center !important;
-    }
-
-    .homepage-bar [class*=" porto-icon-"],
-    .homepage-bar [class^="porto-icon-"],
-    .homepage-bar [class*=" porto-new-icon-"],
-    .homepage-bar [class^="porto-new-icon-"] {
-        font-size: 32px;
-    }
-
-    .homepage-bar .row {
-        margin: 0;
-    }
-
-    .homepage-bar .row>div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .homepage-bar .col-lg-4>* {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .homepage-bar h3 {
-        line-height: 1;
-        margin-bottom: 3px;
-    }
-
-    @media (max-width: 991px) {
-        .homepage-bar .col-lg-4 {
-            border-top: 2px solid #fff;
-        }
-
-        .homepage-bar .col-lg-4:first-child {
-            border-top: 0;
-        }
-    }
-
-    .recent-posts {
-        margin-bottom: 60px;
-    }
-    .recent-posts .item .col-md-5,
-    .recent-posts .item .col-md-7 {
-        max-width: 100%;
-        flex: 0 0 100%;
-        position: static;
-    }
-
-    .recent-posts .item .post-image {
-        padding: 0;
-        border: 0;
-        width: 100%;
-        padding-top: 46%;
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .recent-posts .item .post-image img {
-        border-radius: 0;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transition: transform 0.3s;
-    }
-
-    .recent-posts .item .post-image:hover img {
-        transform: scale(1.2);
-    }
-
-    .recent-posts .postTitle h2 a {
-        color: #2b2b2b;
-    }
-
-    .recent-posts .postTitle h2 {
-        font-size: 30px;
-        font-weight: 400;
-        line-height: 1.3;
-        margin-bottom: 16px;
-    }
-
-    .recent-posts .postTitle {
-        min-height: 0;
-        padding-left: 1px;
-    }
-
-    .recent-posts .postContent {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    .recent-posts a.readmore {
-        font-size: 13px;
-        margin-left: 5px;
-    }
-
-    .slide-title {
-        color: #fff;
-        font-size: 42px;
-        line-height: 1;
-        font-weight: 600;
-        margin: 0 0 30px 0;
-    }
-
-    .slide-desc {
-        color: #fff;
-        font-size: 18px;
-        line-height: 2;
-        margin-bottom: 70px;
-    }
-
-    button.slide-action {
-        background-color: #fff;
-        color: #0D1125;
-        font-size: 22px;
-        height: 50px;
-        border-radius: 25px;
-        padding: 0px 30px 4px;
-    }
-
-    button.home-action {
-        background: #BDBFAA;
-        color: #0D1125;
-        font-size: 20px;
-        border: 1px solid #0D1125;
-        height: 50px;
-        border-radius: 25px;
-        padding: 0 30px;
-    }
-
-    button.home-action2 {
-        background: #FFFFFF;
-        color: #0D1125;
-        font-size: 20px;
-        border: 1px solid #0D1125;
-        height: 42px;
-        border-radius: 21px;
-        padding: 0 24px;
-    }
-
-    .block-about {
-        text-align: center;
-        background-color: #fff;
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 78px 0 40px;
-    }
-
-    .title {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 50px;
-        color: #000;
-    }
-
-    .desc {
-        font-size: 18px;
-        line-height: 1.8;
-        color: #000;
-        padding: 0 36px;
-        margin-bottom: 48px;
-    }
-
-    .desc>p {
-        margin-bottom: 30px;
-    }
-
-    .brands {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 94px;
-    }
-
-    .brands .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 166px;
-        height: 166px;
-        border: 1px solid #CECECE;
-        border-radius: 20px;
-    }
-
-    .products-section {
-        padding: 50px 0 76px;
-    }
-    .block-desc {
-        line-height: 1.8;
-        font-size: 18px;
-        color: #000;
-        opacity: .7;
-        margin-bottom: 20px;
-    }
-
-    #trending_products {
-        margin-bottom: 70px;
-    }
-
-    .posts-block {
-        padding: 40px 10px 64px;
-    }
-    #latest_news .item {
-        background: white;
-    }
-    #latest_news .item .post-info-wrapper {
-        padding: 20px 28px 18px;
-        border-style: solid;
-        border-color: #C4C4C4;
-        border-width: 0 1px 1px 1px;
-    }
-    #latest_news .recent-posts .postTitle h2 {
-        font-size: 24px;
-    }
-    #latest_news .recent-posts .item .post-image {
-        margin-bottom: 0;
-    }
-    .owl-top-narrow .owl-theme .owl-controls {
-        top: -70px;
-    }
-    .owl-top-narrow .owl-theme .owl-controls .owl-nav em {
-        font-size: 14px;
-    }
-    .owl-top-narrow .owl-theme .owl-controls .owl-nav .owl-prev {
-        margin-right: 24px;
-    }
-</style>
-
-<div class="home-slider">
-    <!-- Homepage banner Start -->
-    <div class="row">
-        <div class="col-md-12" style="text-align: center;">
-            <div class="d-flex align-items-center slide" style="background: url({{media url='banner/banner-outdoor-dining.png'}}) center no-repeat; background-size: cover; width: 100%; height: 100%; justify-content: flex-end;">
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <h2 class="slide-title">Welcome to Hospitality Marketplace</h2>
-                    <p class="slide-desc">Carefully selected commercial hospitality products to delight<br>and protect your guests</p>
-                    <p><a href="{{store url="customer/account"}}"><button class="slide-action">I'm In The Industry</button></a></p>
+<div class="home-top-container">
+	<div class="home-category">
+		<div class="home-side-menu">
+			{{block class="Smartwave\Megamenu\Block\Topmenu" name="sw.sidenav" template="Smartwave_Megamenu::sidemenu.phtml" ttl="3600"}}
+		</div>
+	</div>
+	<div class="home-banner-main">
+		<div id="banner-slider-demo-9" class="owl-carousel owl-banner-carousel owl-bottom-narrow" style="margin-bottom:20px;">
+			<div class="item" style="background:url({{media url="wysiwyg/gastro/homepage/shutterstock_1306579120.jpg"}}) center center no-repeat;background-size:cover;border-radius:2px;">
+				<div style="position:relative">
+					<img src="{{media url="wysiwyg/gastro/homepage/02.png"}}" alt="" />
+					<div class="content content-slide-1" style="top:9%;left:5%;">
+						<span style="font-weight: 300">UNSERE</span>
+						<h2>EDELSTAHLMÖBEL</h2>
+					</div>
+				</div>
+			</div>
+			<div class="item" style="background:url({{media url="wysiwyg/gastro/homepage/shutterstock_1306579120.jpg"}}) center center no-repeat;background-size:cover;border-radius:2px;">
+				<div style="position:relative">
+					<img src="{{media url="wysiwyg/gastro/homepage/02.png"}}" alt="" />
+					<div class="content content-slide-2" style="position:absolute;z-index:1;top:23%;left:8%;text-align:left;">
+						<span style="font-size:18px;">OVER <b style="font-size:26px;font-family:'Oswald';">200+</b></span>
+						<h2>GREAT DEALS</h2>
+						<p style="font-size:14px;font-weight:300;">While they last!</p>
+						<a href="{{config path="web/unsecure/base_url"}}electronics.html" class="btn btn-default" style="background-color:#010204;color:#fff;font-family:'Oswald';font-size:14px;letter-spacing:0.025em;font-weight:400;">shop now</a>
+					</div>
+				</div>
+			</div>
+			<div class="item" style="background:url({{media url="wysiwyg/gastro/homepage/shutterstock_1306579120.jpg"}}) center center no-repeat;background-size:cover;border-radius:2px;">
+				<div style="position:relative">
+					<img src="{{media url="wysiwyg/gastro/homepage/02.png"}}" alt="" />
+					<div class="content content-slide-3" style="position:absolute;z-index:1;top:23%;left:8%;text-align:left;">
+						<span style="font-size:18px;">up to <b style="font-size:26px;font-family:'Oswald';">40%</b> off</span>
+						<h2>NEW ARRIVALS</h2>
+						<p style="font-size:14px;font-weight:300;">Starting at $9</p>
+						<a href="{{config path="web/unsecure/base_url"}}motors.html" class="btn btn-default" style="background-color:#010204;color:#fff;font-family:'Oswald';font-size:14px;letter-spacing:0.025em;font-weight:400;">shop now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owl.carousel/owl.carousel.min'
+			], function ($) {
+				$("#banner-slider-demo-9").owlCarousel({
+					items: 1,
+					autoplay: true,
+					autoplayTimeout: 5000,
+					autoplayHoverPause: true,
+					dots: false,
+					nav: false,
+					navRewind: true,
+					animateIn: 'fadeIn',
+					animateOut: 'fadeOut',
+					loop: true
+				});
+			});
+		</script>
+	</div>
+    <div class="home-banner-right">
+        <div id="ads-slider-demo-9" class="owl-carousel">
+            <div class="item">
+                <img src="{{media url="wysiwyg/gastro/homepage/shutterstock_1071810413.jpg"}}" alt="" style="display:inline-block;"/>
+                <div class="content ads-slide-1" style="bottom:6%;left:7%;">
+                    <span style="font-weight: 300">DEINE</span>
+                    <h2>KOCHTECHNIK</h2>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Homepage Banner End -->
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 block-about">
-            <h2 class="title">Who is Hospitality Marketplace?</h2>
-            <div class="desc">
-                <p>Nowhere else will you find the most sought after equipment in the food and beverage industry at manufacturer direct prices. We offer both front and back of the house products from custom banquet furniture to commercial flatware and everything in between.</p>
-                <p></p>
-                <p>Hospitality Marketplace works closely with manufacturers allowing them to work closely with you so you can get the equipment you need to build your commercial hospitality operation. We focus on your success by connecting you with many of the premier restaurant supply company brands with our boutique service that also helps guide you from your first ideas about your restaurant, bar, catering, or other foodservice business, through delivery and your ongoing needs. Our industry is all about relationships, which is why we cherish each and every organization we help.</p>
-                <p></p>
-                <p>Sound too good to be true? Start browsing and see for yourself!</p>
-            </div>
-            <div id="brands_slider">
-                <div class="brands">
-                    <div class="item"><img src="{{media url="brands/asa_logo.png"}}" alt=""></div>
-                    <div class="item"><img src="{{media url="brands/richard_ginori_logo.png"}}" alt=""></div>
-                    <div class="item"><img src="{{media url="brands/wilmax_logo.png"}}" alt=""></div>
-                    <div class="item"><img src="{{media url="brands/duralex_logo.png"}}" alt=""></div>
-                    <div class="item"><img src="{{media url="brands/la_rochere_logo.png"}}" alt=""></div>
-                    <div class="item"><img src="{{media url="brands/zieher_logo.png"}}" alt=""></div>
+            <div class="item">
+                <img src="{{media url="wysiwyg/gastro/homepage/shutterstock_1071810413.jpg"}}" alt="" style="display:inline-block;" />
+                <div class="content ads-slide-2" style="bottom:6%;left:7%;">
+                    <span style="font-weight: 300">DEINE</span>
+                    <h2>KOCHTECHNIK</h2>
                 </div>
-                <a href="{{store url="#"}}"><button class="home-action">VIEW More ></button></a>
             </div>
-        </div>
-    </div>
-</div>
-<div class="products-section section-with-bg">
-    <div class="container">
-        <div id="trending_products" class="trending-section filterd-products owl-side-narrow hide-addtocart">
-            <h2 class="filterproduct-title" style="margin-bottom: 14px;"><span class="content"><strong>Trending Products</strong></span></h2>
-            {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="trending_product" product_count="12" column_count="6" aspect_ratio="0" image_width="250" image_height="250" template="owl_list.phtml"}}
-            <div style="text-align: center;">
-                <a href="{{store url="#"}}"><button class="home-action">VIEW ALL Trending Products</button></a>
+            <div class="item">
+                <img src="{{media url="wysiwyg/gastro/homepage/shutterstock_1071810413.jpg"}}" alt="" style="display:inline-block;" />
+                <div class="content ads-slide-3" style="bottom:6%;left:7%;">
+                    <span style="font-weight: 300">DEINE</span>
+                    <h2>KOCHTECHNIK</h2>
+                </div>
             </div>
         </div>
         <script type="text/javascript">
             require([
                 'jquery',
                 'owl.carousel/owl.carousel.min'
-            ], function($) {
-                $("#trending_products .owl-carousel").owlCarousel({
+            ], function ($) {
+                $("#ads-slider-demo-9").owlCarousel({
+                    items: 1,
                     autoplay: true,
                     autoplayTimeout: 5000,
                     autoplayHoverPause: true,
-                    loop: true,
-                    rewind: true,
-                    margin: 0,
-                    nav: true,
-                    navText: ["<em class='porto-icon-left-open-huge'></em>", "<em class='porto-icon-right-open-huge'></em>"],
                     dots: false,
-                    responsive: {
-                        0: {
-                            items: 2
-                        },
-                        768: {
-                            items: 3
-                        },
-                        992: {
-                            items: 4
-                        },
-                        1200: {
-                            items: 6
-                        }
-                    }
+                    nav: false,
+                    navRewind: true,
+                    animateIn: 'fadeIn',
+                    animateOut: 'fadeOut',
+                    loop: true
                 });
             });
         </script>
-
-        <div id="featured_products" class="filterd-products hide-addtocart">
-            <h2 class="filterproduct-title" style="margin-bottom: 14px;"><span class="content"><strong>Our Recommendations</strong></span></h2>
-            <p class="block-desc">Our currated selction of top value and durability. Gauranteeing improved guest experiences while remaining cost conscious. Look for the HMP Pineapple</p>
-            {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="12" column_count="6" aspect_ratio="0" image_width="250" image_height="250" template="grid.phtml"}}
-            <div style="text-align: center;">
-                <a href="{{store url="#"}}"><button class="home-action">View All Recommendations</button></a>
-            </div>
-        </div>
     </div>
 </div>
-<div class="container">
+<h2 class="filterproduct-title"><span class="content"><strong>FEATURED ITEMS</strong></span></h2>
+<div id="featured_product" class="owl-top-narrow">
+    {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="10" aspect_ratio="1" image_width="200" product_type="1" template="owl_list.phtml"}}
+</div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+    ], function ($) {
+        $("#featured_product .owl-carousel").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            loop: true,
+            navRewind: true,
+            margin: 0,
+            nav: false,
+            navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
+            dots: true,
+            responsive: {
+                0: {
+                    items:2
+                },
+                768: {
+                    items:3
+                },
+                992: {
+                    items:3
+                },
+                1200: {
+                    items:4
+                }
+            }
+        });
+    });
+</script>
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>New</strong></span></h2>
+        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_small_list" product_count="3" aspect_ratio="0" image_width="212" image_height="212" template="small_list.phtml"}}
+    </div>
+    <div class="col-md-4">
+        <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>Hot</strong></span></h2>
+        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_small_list" product_count="3" aspect_ratio="0" image_width="212" image_height="212" template="small_list.phtml"}}
+    </div>
+    <div class="col-md-4">
+        <h2 class="filterproduct-title" style="background-image:none;margin-top:20px;margin-bottom:5px;"><span class="content"><strong>Sale</strong></span></h2>
+        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_small_list" product_count="3" aspect_ratio="0" image_width="212" image_height="212" template="small_list.phtml"}}
+    </div>
+</div>
+<div class="shop-features" style="background-color:#fff; margin-top:13px;">
     <div class="row">
-        <div class="col-md-12 posts-block">
-            <h2 class="title">Looks</h2>
-            <div id="looks_category">
-                <div class="recent-posts owl-top-narrow">
-                    <div class="owl-carousel">
-                        <div class="item">
-                            <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post1.jpg"}}" alt=""></div>
-                            <div class="postTitle">
-                                <h2><a href="{{store url='blog/post/post-format-standard'}}">Next Generation Buffet</a></h2>
-                                <a href="{{store url="#"}}"><button class="home-action2">VIEW Look ></button></a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post2.jpg"}}" alt=""></div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="postTitle">
-                                        <h2><a href="#">Classic Steakhouse</a></h2>
-                                        <a href="{{store url="#"}}"><button class="home-action2">VIEW Look ></button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post3.jpg"}}" alt=""></div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="postTitle">
-                                        <h2><a href="#">Best Coffee Bar</a></h2>
-                                        <a href="{{store url="#"}}"><button class="home-action2">VIEW Look ></button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post1.jpg"}}" alt=""></div>
-                            <div class="postTitle">
-                                <h2><a href="{{store url='blog/post/post-format-standard'}}">Next Generation Buffet</a></h2>
-                                <a href="{{store url="#"}}"><button class="home-action2">VIEW Look ></button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    require([
-                        'jquery',
-                        'owl.carousel/owl.carousel.min'
-                    ], function ($) {
-                        $("#looks_category .owl-carousel").owlCarousel({
-                            margin: 20,
-                            nav: true,
-                            loop: false,
-                            rewind: true,
-                            navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
-                            dots: false,
-                            responsive: {
-                                0: {
-                                    items:1
-                                },
-                                640: {
-                                    items:2
-                                },
-                                768: {
-                                    items:2
-                                },
-                                992: {
-                                    items:2
-                                },
-                                1200: {
-                                    items:3
-                                }
-                            }
-                        });
-                    });
-                </script>
-            </div>
-            <div style="text-align: center;">
-                <a href="{{store url="#"}}"><button class="home-action">See More Looks ></button></a>
-            </div>
+        <div class="col-md-4" style="margin-bottom: 10px;">
+            <em class="porto-icon-star"></em>
+            <h3>DEDICATED SERVICE</h3>
+            <p>Consult our specialists for help with an order, customization, or design advice.</p>
+            <a href="#">Get in Touch</a>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 10px;">
+            <em class="porto-icon-reply"></em>
+            <h3>FREE RETURNS</h3>
+            <p>We stand behind our goods and services and want you to be satisfied with them.</p>
+            <a href="#">Returns Policy</a>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 10px;">
+            <em class="porto-icon-paper-plane"></em>
+            <h3>INTERNATIONAL SHIPPING</h3>
+            <p>Currently over 50 countries qualify for express international shipping.</p>
+            <a href="#">Learn More</a>
         </div>
     </div>
 </div>
-<div class="section-with-bg">
-    <div class="container posts-block">
-        <h2 class="title">News</h2>
-        <div id="latest_news">
-            <!--{-{block class="Magefan\Blog\Block\Sidebar\Recent" name="blog.home.recent" template="recent_home.phtml"}-}-->
-            <div class="recent-posts">
-                <div class="owl-carousel">
-                    <div class="item">
-                        <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post1.jpg"}}" alt=""></div>
-                        <div class="post-info-wrapper">
-                            <div class="postTitle">
-                                <h2><a href="{{store url='blog/post/post-format-standard'}}">The Basics Of Buying A Telescope</a></h2>
-                            </div>
-                            <div class="postContent">
-                                <p>For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post2.jpg"}}" alt=""></div>
-                        <div class="post-info-wrapper">
-                            <div class="postTitle">
-                                <h2><a href="#">How To Put Movies On Iphone</a></h2>
-                            </div>
-                            <div class="postContent">
-                                <p>This is important work that is constantly ongoing in the world of astronomy. It is worth keeping up with and learning more about as we have barely scratched the surface in our brief.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="post-image"><img src="{{media url="wysiwyg/smartwave/porto/homepage/26/shop26_post3.jpg"}}" alt=""></div>
-                        <div class="post-info-wrapper">
-                            <div class="postTitle">
-                                <h2><a href="{{store url='blog/post/post-format-standard'}}">The Basics Of Buying A Telescope</a></h2>
-                            </div>
-                            <div class="postContent">
-                                <p>For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                require([
-                    'jquery',
-                    'owl.carousel/owl.carousel.min'
-                ], function ($) {
-                    $("#latest_news .owl-carousel").owlCarousel({
-                        loop: true,
-                        margin: 20,
-                        nav: false,
-                        navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
-                        dots: false,
-                        responsive: {
-                            0: {
-                                items:1
-                            },
-                            640: {
-                                items:2
-                            },
-                            768: {
-                                items:2
-                            },
-                            992: {
-                                items:2
-                            },
-                            1200: {
-                                items:2
-                            }
-                        }
-                    });
-                });
-            </script>
+<div class="single-images">
+    <div class="row" style="margin-left:-10px;margin-right:-10px;">
+        <div class="col-md-4" style="padding-left:10px;padding-right:10px;padding-bottom:15px;">
+            <a class="image-link" href="#">
+                <img src="{{media url="wysiwyg/smartwave/porto/homepage/09/content/img1.jpg"}}" alt="" />
+            </a>
         </div>
-        <div style="text-align: center;">
-            <a href="{{store url="#"}}"><button class="home-action">READ ALL NEWS ></button></a>
+        <div class="col-md-4" style="padding-left:10px;padding-right:10px;padding-bottom:15px;">
+            <a class="image-link" href="#">
+                <img src="{{media url="wysiwyg/smartwave/porto/homepage/09/content/img2.jpg"}}" alt="" />
+            </a>
+        </div>
+        <div class="col-md-4" style="padding-left:10px;padding-right:10px;padding-bottom:15px;">
+            <a class="image-link" href="#">
+                <img src="{{media url="wysiwyg/smartwave/porto/homepage/09/content/img3.jpg"}}" alt="" />
+            </a>
         </div>
     </div>
 </div>
+<style type="text/css">
+    #banner-slider-demo-9 img {width:100%;}
+    #banner-slider-demo-9 .content, #ads-slider-demo-9 .content {
+        position: absolute;
+        z-index: 1;
+        color: #fff;
+        background-color: #000000;
+        padding: 12px 15px 12px;
+        border-radius: 3px;
+        letter-spacing: 1.6px;
+        line-height: 1;
+    }
+	#banner-slider-demo-9 .content h2, #ads-slider-demo-9 .content h2 {
+		font-size: 13px;
+		font-weight: bold;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+		line-height: 15px;
+		margin: 2px 0 0;
+	}
+	#banner-slider-demo-9 .content span, #ads-slider-demo-9 .content span {
+        font-size: 17px;
+		text-transform:uppercase;
+	}
+	#banner-slider-demo-9 .content p {
+		font-size:14px;
+		font-weight:300;
+		margin-bottom:10;
+	}
+	#banner-slider-demo-9 .content .btn-default {
+		font-size: 14px;
+		line-height: 25px;
+		letter-spacing: 0.025em;
+		padding: 10px 34px;
+		border-radius:3px;
+		background-color: #010204;
+		color: #fff;
+		font-family: 'Oswald';
+		text-transform: uppercase;
+		margin-top: 28px;
+	}
+	#testimonials-slider-demo-9 {
+		border: solid 2px #0188cc;
+		border-radius: 2px;
+    }
+    #ads-slider-demo-9 .item img {
+        height: 335px;
+    }
+	@media (min-width: 768px) {
+		.page-header .nav-sections {
+			display: none;
+		}
+		h2.side-menu-title {
+			padding: 16px 25px;
+		}
+        .sw-megamenu.navigation.side-megamenu li.level0 > a {
+            margin: 0;
+            line-height: 46px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #707070;
+        }
+        .sw-megamenu.navigation.side-megamenu li.level0 > a img {
+            vertical-align: middle;
+            margin-right: 12px;
+            width: 21px;
+        }
+	}
+	@media (max-width: 767px) {
+		#banner-slider-demo-9 img {width:100%;height:100%;}
+		#banner-slider-demo-9 .owl-controls {
+			display:none !important;
+		}
+		#banner-slider-demo-9 .content span, #ads-slider-demo-9 .content span {
+			font-size: 11px;
+        }
+        #banner-slider-demo-9 .content h2, #ads-slider-demo-9 .content h2 {
+            font-size: 9px;
+            line-height: 11px;
+        }
+		#banner-slider-demo-9 .content .btn-default {
+			font-size: 10px !important;
+			line-height: 20px;
+			padding: 3px 13px;
+			border-radius: 3px;
+			margin-top: 0px;
+		}
+    }
+    @media (min-width: 992px) {
+        .home-top-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .home-category {
+            width: 18%;
+            margin-right: 1.5%;
+        }
+        .home-banner-main {
+            width: 60%;
+        }
+        .home-banner-right {
+            width: 17%;
+        }
+    }
+    .sw-megamenu.navigation.side-megamenu li.level0.fullwidth > .submenu, .sw-megamenu.navigation.side-megamenu li.level0.staticwidth > .submenu {
+        margin-left: 10px !important;
+    }
+</style>

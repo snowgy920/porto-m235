@@ -1,37 +1,3 @@
-.page-header.type0.header-newskin .main-panel-top {
-    border-bottom: 1px solid rgba(248,248,248,0.2);
-}
-.page-header.type0.header-newskin .main-panel-inner {
-    border: none;
-}
-.page-header.type0.header-newskin .custom-block > *, .page-header.type0.header-newskin .custom-block b {
-    color: #fff !important;
-}
-.page-header.type0.header-newskin .custom-block {
-    display: inline-block;
-    text-align: left;
-    font-size: 11px;
-    height: 42px;
-    line-height: 1;
-    border-right: solid 1px rgba(248,248,248,0.2);
-    padding-right: 35px;
-    margin-right: 0;
-    margin-top: -21px;
-    right: 105px;
-}
-.page-header.type0.header-newskin .minicart-wrapper .action.showcart:before, .page-header.type0.header-newskin .minicart-wrapper .action.showcart.active:before {
-    font-size: 33px;
-}
-.page-header.type0.header-newskin .minicart-wrapper .action.showcart {
-    padding-right: 17px;
-}
-.page-header.type0.header-newskin .minicart-wrapper .action.showcart .counter.qty {
-    margin-top: -21px;
-    background-color: #ff5b5b;
-}
-.page-header.type0.header-newskin .minicart-wrapper .action.showcart:after {
-    right: -6px;
-}
 .homepage-bar {
     border: none;
     background-color: transparent;
@@ -40,6 +6,7 @@
     border-color: #fff;
     padding-top: 14px;
     padding-bottom: 15px;
+    text-align: center;
 }
 .homepage-bar [class*=" porto-icon-"], .homepage-bar [class^="porto-icon-"] {
     color: #465157;
@@ -52,14 +19,15 @@
 }
 .homepage-bar h3 {
     font-size: 14px;
-    font-weight: 600;
-    color: #465157;
-    line-height: 19px;
+    font-weight: 700;
+    font-style: italic;
+    color: #6F6F6F;
 }
 .homepage-bar p {
-    font-size: 13px;
-    font-weight: 300;
-    color: #839199;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    color: #A5A5A5;
     line-height: 19px;
 }
 .owl-theme .owl-dots .owl-dot span {
@@ -104,7 +72,6 @@
     background-color: #05131c;
 }
 #ads-slider-demo-9 {
-    border: solid 1px #dae2e6;
     border-radius: 2px;
     padding-bottom: 23px;
 }
@@ -970,20 +937,10 @@
     .products.wrapper ~ .toolbar .pages {
         float: right;
     }
-@media (min-width: 768px) { 
-    .page-header.type0.header-newskin .minicart-wrapper {
-        background-color: transparent;
-        width: 81px;
-        height: 41px;
-        text-align: center;
-        box-shadow: none;
-        border-radius: 0;
-        border: none;
-    }
+@media (min-width: 768px) {
     .home-side-menu {
         background-color: transparent;
-        border-color: #dae2e6;
-        border-radius: 2px;
+        border: none;
     }
     .home-side-menu h2.side-menu-title {
         color: #465157;
@@ -996,7 +953,10 @@
         color: #465157;
     }
     .sw-megamenu.navigation.side-megamenu li.level0.parent > a:after {
-        color: #838b90;
+        color: #adadad;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 48px;
     }
     .sw-megamenu.navigation.side-megamenu li.level0.parent:hover > a:after {
         color: #fff;
@@ -1030,18 +990,21 @@
         right: auto;
     }
     .sw-megamenu.navigation li.level0.fullwidth .submenu li.level1 > a, .sw-megamenu.navigation li.level0.staticwidth .submenu li.level1 > a {
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 700;
-        color: #434d53;
-        letter-spacing: -0.001em;
+        color: #707070;
         margin-top: 9px;
     }
     .sw-megamenu.navigation li.level0.fullwidth .submenu a, .sw-megamenu.navigation li.level0.staticwidth .submenu a, .sw-megamenu.navigation li.level0.classic .submenu a {
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
         color: #696969;
         line-height: 24px;
+    }
+    .sw-megamenu.navigation li.level0.staticwidth .submenu .level2 a {
+        padding-top: 0;
+        padding-bottom: 0;
     }
     .sidebar.sidebar-main:before {
         content: '';
@@ -1084,7 +1047,7 @@
         margin-top: 45px;
     }
 }
-@media (min-widtH: 768px) {
+@media (min-width: 768px) {
     .page-header .switcher .options .action.toggle {
         color: #fff;
     }
@@ -1173,7 +1136,7 @@
     }
 }
 .page-header .switcher .options .action.toggle {
-    color: #bde1f5;
+    color: #707070;
 }
 .page-wrapper > .breadcrumbs {
     margin-bottom: 0;
