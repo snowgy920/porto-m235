@@ -285,89 +285,7 @@
         </div>
     </div>
 </div>
-<div class="shop-locations" style="margin-top: 40px">
-    <h2 class="filterproduct-title" style="margin-bottom: 26px"><span class="content"><strong>Unsere Standorte</strong></span></h2>
-    <div class="row" style="margin-left:-14px;margin-right:-14px;">
-        <div class="col-md-4">
-            <div class="shop-item">
-                <div class="shop-banner">
-                    <img src="{{media url="wysiwyg/gastro/homepage/shop1.jpg"}}" alt="" />
-                </div>
-                <div class="shop-name">
-                    <strong>City</strong>
-                    <span> - sub1</span>
-                </div>
-                <div class="location-info">
-                    <div class="shop-address">
-                        <p>Address 1</p>
-                        <p>Address 2</p>
-                    </div>
-                    <div class="shop-contact">
-                        <p>Tel.: 5555 - 555 555</p>
-                        <p>Fax: 5555 - 55 55 5</p>
-                        <p><a href="mailto:mail@mail.de">mail@mail.de</a></p>
-                    </div>
-                    <div class="open-hours">
-                        <p>Öffnungszeiten:</p>
-                        <p>Mo-Fr 10:00 bis 17:00 Uhr</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="shop-item">
-                <div class="shop-banner">
-                    <img src="{{media url="wysiwyg/gastro/homepage/shop2.jpg"}}" alt="" />
-                </div>
-                <div class="shop-name">
-                    <strong>City</strong>
-                    <span> - sub1</span>
-                </div>
-                <div class="location-info">
-                    <div class="shop-address">
-                        <p>Address 1</p>
-                        <p>Address 2</p>
-                    </div>
-                    <div class="shop-contact">
-                        <p>Tel.: 5555 - 555 555</p>
-                        <p>Fax: 5555 - 55 55 5</p>
-                        <p><a href="mailto:mail@mail.de">mail@mail.de</a></p>
-                    </div>
-                    <div class="open-hours">
-                        <p>Öffnungszeiten:</p>
-                        <p>Mo-Fr 10:00 bis 17:00 Uhr</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="shop-item">
-                <div class="shop-banner">
-                    <img src="{{media url="wysiwyg/gastro/homepage/shop3.jpg"}}" alt="" />
-                </div>
-                <div class="shop-name">
-                    <strong>City</strong>
-                    <span> - sub1</span>
-                </div>
-                <div class="location-info">
-                    <div class="shop-address">
-                        <p>Address 1</p>
-                        <p>Address 2</p>
-                    </div>
-                    <div class="shop-contact">
-                        <p>Tel.: 5555 - 555 555</p>
-                        <p>Fax: 5555 - 55 55 5</p>
-                        <p><a href="mailto:mail@mail.de">mail@mail.de</a></p>
-                    </div>
-                    <div class="open-hours">
-                        <p>Öffnungszeiten:</p>
-                        <p>Mo-Fr 10:00 bis 17:00 Uhr</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{block class="Magento\Cms\Block\Block" block_id="shops_info"}}
 <style type="text/css">
     #banner-slider-demo-9 img {width:100%;}
     #banner-slider-demo-9 .content, #ads-slider-demo-9 .content {
@@ -413,8 +331,21 @@
 		border: solid 2px #0188cc;
 		border-radius: 2px;
     }
-    #ads-slider-demo-9 .item img {
-        height: 335px;
+    @media (min-width: 768px) and (max-width: 991px) {
+        #ads-slider-demo-9 .item img {
+            height: 197px;
+        }
+    }
+    @media (min-width: 1200px) {
+        #ads-slider-demo-9 .item img {
+            height: 335px;
+        }
+    }
+    @media (max-width: 767px) {
+        #ads-slider-demo-9 .item img {
+            width: 100%;
+            height: auto;
+        }
     }
 	@media (min-width: 768px) {
 		.page-header .nav-sections {
@@ -456,7 +387,7 @@
 			margin-top: 0px;
 		}
     }
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
         .home-top-container {
             display: flex;
             justify-content: space-between;
@@ -471,6 +402,9 @@
         }
         .home-banner-right {
             width: 17%;
+        }
+        .home-side-menu {
+            display: block;
         }
     }
     .sw-megamenu.navigation.side-megamenu li.level0.fullwidth > .submenu, .sw-megamenu.navigation.side-megamenu li.level0.staticwidth > .submenu {
@@ -533,73 +467,5 @@
     #brands-slider .owl-stage {
         display: flex;
         align-items: center;
-    }
-    .shop-locations .row > div {
-        padding-left: 14px;
-        padding-right: 14px;
-        padding-bottom: 15px;
-    }
-    .shop-locations .shop-item {
-        position: relative;
-        padding-left: 25%;
-        padding-top: 22px;
-    }
-    .shop-locations .shop-item .shop-banner {
-        position: absolute;
-        width: 49%;
-        left: 0;
-        top: 0;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-    }
-    @media (min-width: 415px) and (max-width: 767px) {
-        .shop-locations .row > div {
-            padding-bottom: 40px;
-        }
-        .shop-locations .shop-item .shop-banner {
-            top: auto;
-            bottom: 0;
-        }
-    }
-    @media (min-width: 451px) and (max-width: 767px) {
-        .shop-locations .shop-item .shop-banner {
-            width: 40%;
-        }
-    }
-    .shop-locations .shop-item .shop-banner img {
-        width: 100%;
-        height: auto;
-    }
-    .shop-locations .shop-item .location-info {
-        background: #F4F4F4;
-        padding: 12px 18px 12px 37%;
-        font-size: 12px;
-    }
-    @media (max-width: 767px) {
-        .shop-locations .shop-item .location-info {
-            padding-right: 0;
-        }
-    }
-    .shop-locations .shop-item .location-info p {
-        margin: 0;
-    }
-    .shop-locations .shop-item .location-info .shop-contact {
-        margin: 10px 0;
-        font-weight: bold;
-    }
-    .shop-locations .shop-item .location-info .shop-contact a {
-        color: #0377FB;
-    }
-    .shop-locations .shop-item .shop-name {
-        position: absolute;
-        top: 2px;
-        left: 48%;
-        font-size: 15px;
-        font-weight: bold;
-        color: #707070;
-    }
-    .shop-locations .shop-item .shop-name strong {
-        color: #333333;
     }
 </style>

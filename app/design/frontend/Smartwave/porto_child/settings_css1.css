@@ -120,7 +120,6 @@
     font-size: 12px;
     letter-spacing: 0.005em;
     color: #fff;
-    font-family: 'Oswald';
     line-height: 45px;
     display: block;
 }
@@ -263,7 +262,6 @@
     font-weight: 400;
 }
 .shop-features a {
-    font-family: 'Oswald';
     font-size: 12.5px;
     text-transform: uppercase;
     color: #2b2b2d;
@@ -312,7 +310,7 @@
 .block-category-list .block-title,.filter-options-title,.filter .filter-current-subtitle {
     border: none;
     background-color: transparent;
-    padding: 16px 20px 4px 20px;
+    padding: 16px 20px 4px 0;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 600;
@@ -320,7 +318,7 @@
     letter-spacing: 0.01em;
 }
 .block-category-list .block-title {
-    padding: 30px 20px 0 20px;
+    padding: 30px 20px 0 0;
 }
 .block-category-list .block-title strong {
     font-weight: 600;
@@ -328,7 +326,7 @@
 .block-category-list .block-content,.filter-options-content {
     border: none;
     background-color: transparent;
-    padding: 10px 20px 26px 20px;
+    padding: 10px 20px 26px 0;
     border-bottom: #efefef solid 1px;
     position: relative;
     z-index: 2;
@@ -431,7 +429,6 @@
     padding: 0 20px;
 }
 .sidebar-filterproducts.custom-block + h2 +h5 {
-    font-family: 'Open Sans' !important;
     font-weight: 600 !important;
     font-size: 14px !important;
     color: #7a7d82 !important;
@@ -482,7 +479,6 @@
     padding: 10px 20px;
     background-color: #010204;
     color: #fff;
-    font-family: 'Oswald';
     text-transform: uppercase;
     border-radius: 2px;
     margin-top: 31px;
@@ -527,45 +523,18 @@
     border-top: solid 1px #efefef;
     padding-top: 25px;
 }
-.filterproducts.products .product-item .product-item-photo {
-    border: solid 1px #ececec;
-}
 .product-item .product-reviews-summary {
     background: none;
 }
 .price-box .price {
     font-family: 'Nunito';
     font-weight: bold;
-    font-size: 13px;
+    font-size: 16px;
     color: #333333;
 }
-.old-price .price {
-    font-size: 13px;
-    color: #999;
-}
-
-.catalog-product-view .sidebar .custom-block {
-    border: none;
-    color: #6b7a83;
-    padding-bottom: 0;
-    margin-bottom: 33px;
-    background: none;
-}
-.catalog-product-view .sidebar .custom-block-1>div i {
-    color: #0088cc;
-    border: none;
-    font-size: 40px;
-    float: left;
-}
-.catalog-product-view .sidebar .custom-block-1>div {
-    min-height: 65px;
-    clear: both;
-    padding: 18px 0;
-    border-bottom: solid 1px #dee5e8;
-    margin-bottom: 0;
-}
-.catalog-product-view .sidebar .custom-block-1>div:last-child {
-    border-bottom-width: 0;
+.old-price .price, .saving-price .price {
+    font-size: 12px;
+    color: #525252;
 }
 .block-manufacturer {
     text-align: center;
@@ -619,7 +588,7 @@
     font-weight: 400;
     letter-spacing: 0.005em;
     line-height: 27px;
-    border-bottom: solid 1px #dae2e6;
+    margin-bottom: 50px;
 }
 .product.media {
     padding-right: 12px;
@@ -628,53 +597,48 @@
     border: none;
 }
 .fotorama__nav--thumbs .fotorama__thumb {
-    border-color: #dae2e6;
+    border-color: #DBDBDB;
 }
 .product-options-bottom .price-box .price-container .price, .product-info-price .price-box .price-container .price {
-    font-family: 'Oswald';
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.005em;
 }
-.product-info-main .product-info-price .old-price .price-wrapper .price {
-    font-size: 16px;
-    color: #2b2b2d;
-    font-weight: 400;
-}
 .product-info-main .fieldset > .field.qty, .product-info-main .nested.options-list > .field.qty {
     position: relative;
-    width: 106px;
+    width: 64px;
 }
 .product-info-main .qty.field .control, .product-info-main .qty.field .qty-changer {
-    margin-left: 29px;
+    margin-left: 16px;
 }
 .product-info-main .qty.field .qty-changer > a {
     position: absolute;
     top: 0;
     left: 0;
-    height: 43px;
-    width: 30px;
-    line-height: 41px;
+    height: 27px;
+    width: 17px;
+    line-height: 26px;
     text-align: center;
     margin: 0;
-    border-color: #dae2e6;
+    border-color: #DBDBDB;
+    font-size: 8px;
 }
 .product-info-main .qty.field .qty-changer > a:first-child {
     left: auto;
     right: 4px;
 }
 .product-info-main .box-tocart .input-text.qty {
-    font-family: 'Oswald';
     display: inline-block;
     vertical-align: middle;
-    height: 43px;
-    width: 44px!important;
-    font-size: 14px;
+    height: 27px;
+    width: 28px!important;
+    font-size: 12px;
     font-weight: 400;
     text-align: center;
-    color: #61605a;
+    color: #707070;
     margin: 0;
-    border-color: #dae2e6;
+    padding: 0;
+    border-color: #DBDBDB;
 }
 .product-info-main .qty.field .qty-changer > a .porto-icon-up-dir:before {
     content: '\f882';
@@ -682,22 +646,15 @@
 .product-info-main .qty.field .qty-changer > a .porto-icon-down-dir:before {
     content: '\f883';
 }
+.product-info-main .product-info-price .special-price .price-label:after {
+    content: '';
+}
 .catalog-product-view:not(.weltpixel-quickview-catalog-product-view):not(.weltpixel_quickview-catalog_product-view) .box-tocart .action.tocart {
-    height: 43px;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    font-weight: 400;
-}
-.box-tocart .action.tocart:before {
-    content: '\e87f';
-    font-family: 'porto-icons';
-    margin-right: 7px;
-    font-size: 16px;
-}
-.action.primary,.action.primary:active {
-    font-family: "Oswald";
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    height: 27px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0 15px;
 }
 .product-addto-links .action.towishlist,.product-addto-links .action.tocompare,.moved-add-to-links .action.mailto.friend, .product-social-links .action.mailto.friend {
     width: 43px;
@@ -708,13 +665,20 @@
     background-color: #fff;
     box-shadow: none;
     border: none;
-    border-top: #dae2e6 solid 1px;
+    border-top: #DBDBDB solid 1px;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.005em;
     line-height: 27px;
 }
 
+.block.upsell {
+    margin: 0;
+}
+.main-upsell-product-detail {
+    margin: 0;
+    padding: 0;
+}
 .main-upsell-product-detail .block.upsell .title strong {
     background: none;
 }
@@ -722,16 +686,16 @@
     background: none;
     border-bottom: #e1e1e1 solid 1px;
     font-weight: 700;
+    margin-top: 0;
     margin-bottom: 16px;
     padding-bottom: 10px;
     text-transform: uppercase;
     text-align: left;
 }
 .block.upsell .title strong {
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Oswald';
-    color: #302e2a;
+    font-size: 16px;
+    font-weight: bold;
+    color: #707070;
 }
 .review-ratings .rating-label {
     display: block;
@@ -938,7 +902,7 @@
         color: #fff;
     }
     .sw-megamenu.navigation.side-megamenu li.level0 > .submenu {
-        border: solid 1px #dae2e6;
+        border: solid 1px #DBDBDB;
         box-shadow: 0 3px 15px -2px rgba(0,0,0,0.3);
         padding: 10px 0 10px 15px;
     }
@@ -959,7 +923,7 @@
     }
     .sw-megamenu.navigation.side-megamenu li.level0 > .submenu:after {
         border: 9px solid;
-        border-color: transparent #dae2e6 transparent transparent;
+        border-color: transparent #DBDBDB transparent transparent;
         z-index: 2;
         left: -18px;
         top: 10px;
@@ -984,16 +948,6 @@
     .sw-megamenu.navigation li.level0.staticwidth .submenu .level2 a {
         padding-top: 0;
         padding-bottom: 0;
-    }
-    .sidebar.sidebar-main:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 20px;
-        border: solid 1px #dae2e6;
-        top: 0;
-        bottom: 0;
-        border-radius: 2px;
     }
     .product.data.items > .item.title {
         padding: 10px 30px 10px 0;
@@ -1101,7 +1055,6 @@
 .block-minicart .block-content > .actions > .secondary .action.viewcart {
     color: #333;
     font-weight: 500;
-    font-family: 'Oswald';
 }
 .cms-index-index .single-images {
     margin-bottom: 5px;
@@ -1123,7 +1076,6 @@
 .products-grid .product-item-details .product-item-actions .tocart {
     text-transform: uppercase;
     font-size: 12.53px;
-    font-family: 'Oswald';
     font-weight: 400;
     letter-spacing: 0.025em;
     color: #6f6e6c;
@@ -1138,4 +1090,7 @@
 }
 .product-social-links .action.towishlist:before, .product-addto-links .action.towishlist:before, .block-bundle-summary .action.towishlist:before, .product-item .action.towishlist:before, .table-comparison .action.towishlist:before {
     content: '\e889';
+}
+.products-list .product-item-info {
+    align-items: flex-start;
 }

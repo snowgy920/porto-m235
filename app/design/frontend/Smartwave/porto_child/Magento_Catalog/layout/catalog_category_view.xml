@@ -7,12 +7,5 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="category.image" destination="page.top" before="breadcrumbs"/>
-        <move element="page.main.title" destination="category.image" before="breadcrumbs"/>
-        <referenceBlock name="category.product.type.details.renderers" remove="true"/>
-
-        <referenceContainer name="sidebar.main">
-            <block class="Smartwave\Porto\Block\Template" name="category.leftnav.title" before="category_leftnav" template="Magento_Catalog::category/leftnav_title.phtml"/>
-        </referenceContainer>
     </body>
 </page>

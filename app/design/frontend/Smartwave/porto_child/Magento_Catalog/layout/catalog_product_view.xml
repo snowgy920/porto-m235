@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="product.info.overview" destination="product.info.main" after="-"/>
-        <referenceBlock name="product.info.overview">
-            <arguments>
-                <argument name="at_label" translate="true" xsi:type="string">Quick Review</argument>
-            </arguments>
-        </referenceBlock>
-        <referenceBlock name="product.attributes">
-            <arguments>
-                <argument translate="true" name="title" xsi:type="string">Specifications</argument>
-            </arguments>
-        </referenceBlock>
-
-        <referenceBlock name="view.addto.compare" remove="true"/>
-        <referenceBlock name="product.info.mailto" remove="true" />
+        <referenceContainer name="product.info.stock.sku" remove="true"/>
+        <referenceContainer name="product.info.social" remove="true"/>
+        <referenceContainer name="main.content.after">
+            <block class="Magento\Cms\Block\Block" name="product.store.location">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">shops_info</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View" template="Magento_Catalog::product/view/tags.phtml" after="product.info.overview"/>
+        </referenceContainer>
     </body>
 </page>

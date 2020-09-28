@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 use Magento\Framework\App\Action\Action;
 
 // @codingStandardsIgnoreFile
@@ -21,16 +25,10 @@ $_dailydealhelper =$this->helper('Smartwave\Dailydeals\Helper\Data');
 
 $_portohelper = $this->helper('Smartwave\Porto\Helper\Data');
 
-$review_model = $_portohelper->getModel('\Magento\Review\Model\Review');
 $_category_config = $_portohelper->getConfig('porto_settings/category');
 $_category_grid_config = $_portohelper->getConfig('porto_settings/category_grid');
 $_product_label_config = $_portohelper->getConfig('porto_settings/product_label');
 $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
-
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category'); //Get Current Category
-$settings = $objectManager->get('\Magento\Catalog\Model\Design')->getDesignSettings($category);
-$layout = $settings->getPageLayout();
 ?>
 <?php $iterator = 1; ?>
 <?php if (!$_productCollection->count()): ?>
@@ -45,12 +43,7 @@ $layout = $settings->getPageLayout();
         $hover_image = 'category_page_grid-hover';
         $showDescription = false;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
-
-        if ($layout == '1column') {
-            $columns = 'columns6';
-        } else {
-            $columns = 'columns'.$_category_grid_config['columns'];
-        }
+        $columns = 'columns'.$_category_grid_config['columns'];
         $product_type = $_category_grid_config['product_type'];
         if($product_type == null) {
             $product_type = 1;
@@ -59,7 +52,7 @@ $layout = $settings->getPageLayout();
         $viewMode = 'list';
         $image = 'category_page_list';
         $hover_image = 'category_page_list-hover';
-        $showDescription = false;
+        $showDescription = true;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
         $columns = '';
         $product_type = 0;
@@ -137,6 +130,7 @@ $layout = $settings->getPageLayout();
                                 echo '<div class="product-labels">'.$product_label.'</div>';
                         ?>
                         <?php if($product_type == 3 || $product_type == 5 || $product_type == 6 || $product_type == 7 || $product_type == 8 || $product_type == 9): ?>
+                        <?php if ($block->getMode() == 'grid'): //show actions only on the grid mode ?>
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
                                 <div class="actions-primary">
@@ -196,6 +190,7 @@ $layout = $settings->getPageLayout();
                             </div>
                         </div>
                         <?php endif; ?>
+                        <?php endif; ?>
                         <!-- Dailydeal Product data -->
                         <?php if($_dailydealhelper->isDealProduct($_product->getId())) : ?>
                         <?php $unique_id = rtrim(base64_encode(md5(microtime())),"="); ?>
@@ -241,10 +236,14 @@ $layout = $settings->getPageLayout();
                         <?php
                             $_productNameStripped = $block->stripTags($_product->getName(), null, true);
                         ?>
-
+                        <strong class="product name product-item-name">
+                            <a class="product-item-link"
+                               href="<?php echo $_product->getProductUrl() ?>">
+                                <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                            </a>
+                        </strong>
                         <?php if($_category_config['rating_star']): ?>
                         <?php
-                            $review_model->getEntitySummary($_product);
                             $review_html = $block->getReviewsSummaryHtml($_product, $templateType);
                         ?>
                         <?php if($review_html): ?>
@@ -261,18 +260,9 @@ $layout = $settings->getPageLayout();
                         <?php endif; ?>
                         <?php endif; ?>
 
-                        <strong class="product name product-item-name">
-                            <a class="product-item-link"
-                               href="<?php echo $_product->getProductUrl() ?>">
-                                <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
-                            </a>
-                        </strong>
-
                         <?php if ($showDescription):?>
                             <div class="product description product-item-description">
                                 <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>"
-                                   class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
                         <?php if($_category_config['product_price']): ?>
@@ -281,6 +271,7 @@ $layout = $settings->getPageLayout();
                         <?php echo $block->getProductDetailsHtml($_product); ?>
 
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9): ?>
+                        <?php if ($block->getMode() == 'grid'): //show actions only on the grid mode ?>
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
                                 <?php if ($block->getMode() == 'grid'): ?>
@@ -372,6 +363,22 @@ $layout = $settings->getPageLayout();
                             </div>
                         </div>
                         <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php if ($block->getMode() == 'list'): //show actions only on the grid mode ?>
+                        <?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                            $_product = $objectManager->get('Magento\Catalog\Model\Product')->load($_product->getId());
+                            if ( !empty(trim($_product->getData('tag'))) ):
+                                $tags = explode(',', $_product->getData('tag'));
+                            ?>
+                        <div class="product-tags">
+                            <?php foreach ($tags as $tag): ?>
+                            <span><?= $tag?></span>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php endif; ?>
+
                     </div>
                 </div>
                 <?php echo($iterator == count($_productCollection)+1) ? '</li>' : '' ?>
