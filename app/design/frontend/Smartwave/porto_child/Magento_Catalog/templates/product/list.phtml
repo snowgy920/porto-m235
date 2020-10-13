@@ -240,6 +240,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
                             </a>
                         </strong>
+                        <div class="product-item-sku"><?php echo $_helper->productAttribute($_product, $_product->getSku(), 'sku');?></div>
                         <?php if($_category_config['rating_star']): ?>
                         <?php
                             $review_html = $block->getReviewsSummaryHtml($_product, $templateType);
