@@ -365,15 +365,13 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php endif; ?>
                         <?php endif; ?>
 
-                        <?php if ($block->getMode() == 'list'): //show actions only on the grid mode ?>
-                        <?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-                            $_product = $objectManager->get('Magento\Catalog\Model\Product')->load($_product->getId());
-                            if ( !empty(trim($_product->getData('tag'))) ):
-                                $tags = explode(',', $_product->getData('tag'));
+                        <?php if ($block->getMode() == 'list'): //show actions only on the grid mode
+                            if ( !empty(trim($_product->getTag())) ):
+                                $tags = explode(',', $_product->getTag());
                             ?>
                         <div class="product-tags">
                             <?php foreach ($tags as $tag): ?>
-                            <span><?= $tag?></span>
+                            <span><?= trim($tag)?></span>
                             <?php endforeach; ?>
                         </div>
                         <?php endif; ?>
