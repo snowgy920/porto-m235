@@ -130,7 +130,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 echo '<div class="product-labels">'.$product_label.'</div>';
                         ?>
                         <?php if($product_type == 3 || $product_type == 5 || $product_type == 6 || $product_type == 7 || $product_type == 8 || $product_type == 9): ?>
-                        <?php if ($block->getMode() == 'grid'): //show actions only on the grid mode ?>
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
                                 <div class="actions-primary">
@@ -189,7 +188,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php endif; ?>
                         <?php endif; ?>
                         <!-- Dailydeal Product data -->
                         <?php if($_dailydealhelper->isDealProduct($_product->getId())) : ?>
@@ -263,6 +261,8 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php if ($showDescription):?>
                             <div class="product description product-item-description">
                                 <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>"
+                                   class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
                         <?php if($_category_config['product_price']): ?>
@@ -271,7 +271,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php echo $block->getProductDetailsHtml($_product); ?>
 
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9): ?>
-                        <?php if ($block->getMode() == 'grid'): //show actions only on the grid mode ?>
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
                                 <?php if ($block->getMode() == 'grid'): ?>
@@ -363,20 +362,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                             </div>
                         </div>
                         <?php endif; ?>
-                        <?php endif; ?>
-
-                        <?php if ($block->getMode() == 'list'): //show actions only on the grid mode
-                            if ( !empty(trim($_product->getTag())) ):
-                                $tags = explode(',', $_product->getTag());
-                            ?>
-                        <div class="product-tags">
-                            <?php foreach ($tags as $tag): ?>
-                            <span><?= trim($tag)?></span>
-                            <?php endforeach; ?>
-                        </div>
-                        <?php endif; ?>
-                        <?php endif; ?>
-
                     </div>
                 </div>
                 <?php echo($iterator == count($_productCollection)+1) ? '</li>' : '' ?>
