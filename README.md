@@ -25,9 +25,3 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
     * CHANGE: Rename `foo()` to `bar()`
 * 0.0.1
     * Work in progress
-
-## Buy me a coffee
-Whether you use this project, have learned something from it, or just like it, please consider supporting it by buying me a coffee, so I can dedicate more time on open-source projects like this :)
-
-ERC20 : 0xce0b6abe313b7a86f9f1c46083f28085319ce879<br>
-TRC20 : TQ57W4J9j8zZ17TN4KfouNfhP3ifv62aMh
